@@ -1,0 +1,644 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --primary-color: #266298;
+  /* Primary color */
+  --secondary-color: #1f4e7a;
+  /* Secondary color */
+  --background-color: #f4f4f4;
+  /* Background color */
+  --header-font: "Tinos", serif;
+  --body-font: "Open Sans", sans-serif;
+  --serif-font: "PT Serif", serif;
+}
+
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+/* General Styles */
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  /* Light background for the contact section */
+
+  color: #555;
+  /* Adjusted text color for better readability */
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container-small {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #f9f9f9;
+  /* Slightly darker navbar */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  position: static;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Basic navbar styling */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto; /* Ensure height accommodates the dropdown */
+  padding: 10px 5%; /* Use percentage padding for responsiveness */
+  position: relative; /* Positioning context for absolute elements */
+}
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column; /* Stack bars vertically */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+}
+.nav-links {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+/* Styles specifically for nav-link class, can also target .nav-links a if needed */
+.nav-link {
+  color: #00000099; /* Text color for nav-link */
+  text-decoration: none;
+  padding: 10px 15px; /* Padding for better click area */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #00000099;
+  font-weight: normal;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.dropdown-toggle:hover {
+  text-decoration: none; /* Underline on hover for a link effect */
+}
+
+/* Optional dropdown arrow */
+.dropdown-toggle::after {
+  content: "▾"; /* Thin downward arrow symbol */
+  font-size: 20px;
+  color: #00000099; /* Match the arrow color to the link color */
+  margin-left: 6px;
+}
+
+/* Dropdown Menu styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  min-width: 160px;
+  z-index: 100; /* Increased z-index */
+}
+
+/* Styles for links in the dropdown */
+.dropdown-menu a {
+  display: block; /* Make links block elements */
+  padding: 10px 15px; /* Padding for links */
+  color: #333; /* Default text color */
+  text-decoration: none; /* Remove underline */
+  position: relative; /* Allow absolute positioning for ::after */
+  overflow: hidden; /* Prevent overflow of the pseudo-element */
+}
+
+/* Pseudo-element for the hover effect */
+.dropdown-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Position at the bottom of each link */
+  width: 100%;
+  height: 2px; /* Height of the line */
+  background-color: var(--primary-color); /* Your primary color */
+  transform: scaleX(0); /* Start hidden */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-menu a:hover::after {
+  transform: scaleX(1); /* Expand the line on hover */
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd;
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.navbar .nav-links {
+  margin-right: 20px;
+}
+
+/* .contact-link {
+  position: relative;
+}
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.contact-link:hover::after {
+  transform: scaleX(1);
+} */
+
+/* Header Section (Full-Width Background Image) */
+header {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/office.png") no-repeat center center/cover;
+  text-align: center;
+  padding: 40px 20px;
+  color: #e8f1f8;
+  z-index: 1;
+  min-height: 300px;
+}
+
+/* header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(75, 100, 168, 0.4);
+  z-index: -1;
+} */
+
+.header-text {
+  position: relative;
+  z-index: 2;
+}
+
+.header-text h1 {
+  font-family: var(--header-font);
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0;
+  line-height: 0.9;
+}
+
+.header-text h1 span {
+  font-size: 38px;
+  display: inline-block;
+}
+
+.header-text h2 {
+  font-family: var(--header-font);
+  font-weight: 100;
+  font-size: 22px;
+  letter-spacing: -1px;
+  margin-top: 5px;
+  margin-bottom: 15%;
+}
+
+header p {
+  font-family: var(--body-font);
+  font-size: 2rem;
+  margin: 20px 0;
+  font-weight: 300;
+}
+
+/* Call-to-Action Section */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 15px;
+  background-color: var(--primary-color);
+  /* Uses primary color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  /* Uses secondary color for hover */
+}
+
+/* Quote Section */
+.divider {
+  width: 100%;
+  height: 1px; /* Thickness of the divider */
+  background-color: #e0e0e0; /* Color of the divider */
+  margin: 20px 0; /* Spacing above and below the divider */
+}
+
+.quote h2 {
+  color: #846322;
+  font-family: var(--serif-font);
+  font-size: 28px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Contact card Section */
+.card-container {
+  display: flex;
+  flex: 1;
+  max-width: 1000px;
+  gap: 40px;
+  padding: 20px;
+  justify-content: center; /* Center-align cards within the container */
+}
+.card {
+  background-color: #1e1e1e;
+  color: #fff;
+  flex: 1; /* Allow the card to grow and fill the available space */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.card-image-no-zoom {
+  width: 100%;
+  height: auto;
+}
+
+.card-image:hover {
+  transform: scale(1.06); /* Scale image up to 110% on hover */
+}
+
+.card-content {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start */
+}
+
+.card-content li,
+.card-content h2 {
+  padding-left: 30px;
+}
+
+.card-content h2 {
+  font-size: 1.6em;
+  margin: 10px 0;
+  font-weight: bold; /* Bold for emphasis */
+}
+
+.position {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+  width: 100%;
+  text-align: center; /* Center text */
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  color: #fff;
+}
+
+.contact-info li {
+  margin: 10px 0;
+}
+
+/* Specific styles for phone and email links */
+.card a,
+.contact-info p a {
+  text-decoration: underline; /* Underline for phone and email links */
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: #fff;
+  color: #fff;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #222;
+  color: #bbb;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+/* Footer Content Styles and social media */
+.stay-connected {
+  text-align: center; /* Center the text */
+  padding: 40px 20px 20px 20px; /* Add some padding */
+  color: #fff; /* Text color */
+}
+
+.social-media {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the icons */
+  gap: 15px; /* Space between icons */
+}
+
+.social-media img {
+  width: 25px; /* Set a fixed width for icons */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.social-media img:hover {
+  transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .footer-logo {
+  max-width: 50px;
+  height: auto;
+  margin-right: 20px;
+}
+
+/* Duffield page */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  /* Added padding for breathing space */
+}
+
+.contact-section {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(to bottom, #ffffff, #f0f4f8);
+  /* Subtle gradient background */
+  border-radius: 8px;
+  /* Slightly rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  padding: 20px;
+  /* Add padding inside the section */
+}
+
+/* Style for Go Back button */
+.go-back-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.go-back-btn:hover {
+  color: #846322; /* Change color on hover */
+}
+
+svg {
+  width: 24px; /* Set the width of the SVG */
+  height: 24px; /* Set the height of the SVG */
+}
+
+.contact-details {
+  flex: 1;
+  /* Allow this section to take up more space */
+  padding-right: 20px;
+  /* Add some spacing */
+}
+
+.list-container {
+  flex: 1;
+  /* Allow this section to take up more space */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack list items vertically */
+  margin-left: 20px; /* Space to the left of the list container */
+}
+
+.list-container img {
+  max-width: 300px; /* Maximum width of the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 15px; /* Space below the image */
+}
+
+.contact-details img {
+  max-width: 100%;
+  /* Responsive images */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 8px;
+  /* Slightly rounded corners for images */
+}
+
+.contact-section h3 {
+  color: #846322;
+  /* Use primary color for headings */
+  font-size: 24px;
+  /* Set a larger font size */
+  margin-bottom: 15px;
+  /* Add space below the heading */
+  font-family: "PT Serif", serif;
+  /* Use a serif font for a classic look */
+  text-transform: uppercase;
+  /* Uppercase for emphasis */
+}
+
+ul {
+  list-style-type: disc;
+  /* Default bullet points */
+  padding-left: 20px;
+  /* Indent list items */
+  color: #555;
+  /* Color for the list text for better readability */
+  line-height: 1.6;
+  /* Improve spacing between list items */
+}
+
+ul li {
+  margin-bottom: 10px;
+  /* Space between list items */
+}
+
+/* Responsive Design */
+@media (max-width: 1256px) {
+  .navbar .container {
+    padding: 10px 90px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  header {
+    padding: 20px 10px;
+  }
+
+  .header-text h1 {
+    font-size: 30px;
+  }
+  .header-text h1 span {
+    font-size: 24px;
+  }
+  .header-text h2 {
+    font-size: 18px;
+    margin-bottom: 15%;
+    /* Reduce margin for medium screens */
+  }
+
+  header p {
+    font-size: 24px;
+  }
+
+  .contact-link {
+    font-size: 16px;
+  }
+
+  header {
+    min-height: 300px;
+  }
+  .flex-container {
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
+    padding: 10px;
+  }
+
+  .list-container {
+    margin-top: 20px;
+  }
+
+  .contact-section {
+    flex-direction: column;
+  }
+
+  .quote h2 {
+    font-size: 24px; /* Adjust font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column; /* Stack vertically */
+    width: 100%; /* Full width */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show links when active */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger icon */
+  }
+  .navbar .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  header {
+    min-height: 300px;
+  }
+
+  .header-text h2 {
+    margin-bottom: 15%;
+    /* Reduce margin for medium screens */
+  }
+
+  .quote h2 {
+    font-size: 20px; /* Adjust font size for mobile */
+  }
+
+  /* Hides the contact link on screens smaller than 768px */
+  /* .contact-link {
+    display: none;
+    
+  } */
+
+  .navbar .nav-links {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
