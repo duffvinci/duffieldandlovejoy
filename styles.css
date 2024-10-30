@@ -219,7 +219,8 @@ body {
 /* Header Section (Full-Width Background Image) */
 header {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url("images/office.png") no-repeat center center/cover;
   text-align: center;
   padding: 40px 20px;
