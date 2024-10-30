@@ -49,9 +49,9 @@ body {
 
 /* Navbar */
 .navbar {
-background-color: #f2f3f6;
-  /* Slightly darker navbar */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  background-color: #e6eaf0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   /* Subtle shadow for depth */
   position: static;
   top: 0;
@@ -113,14 +113,18 @@ background-color: #f2f3f6;
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: #00000099;
+ color: #555; /* Neutral dark gray */
+ font-weight: bold;
+ text-transform: uppercase;
   font-weight: normal;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  padding: 12px 18px;
 }
 
 .dropdown-toggle:hover {
+  color: #4a90e2; /* Muted blue on hover */
   text-decoration: none; /* Underline on hover for a link effect */
 }
 
@@ -138,7 +142,7 @@ background-color: #f2f3f6;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
+  background-color: #f7f9fc;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   min-width: 160px;
@@ -153,6 +157,7 @@ background-color: #f2f3f6;
   text-decoration: none; /* Remove underline */
   position: relative; /* Allow absolute positioning for ::after */
   overflow: hidden; /* Prevent overflow of the pseudo-element */
+  /* border-bottom: #1e1e1e 1px solid; */
 }
 
 /* Pseudo-element for the hover effect */
@@ -174,7 +179,7 @@ background-color: #f2f3f6;
 }
 
 .dropdown-menu a:hover {
-  background-color: #ddd;
+  background-color: #d1d9e1;
 }
 
 /* Show dropdown menu on hover */
@@ -183,7 +188,8 @@ background-color: #f2f3f6;
 }
 
 .logo img {
-  width: 80px;
+  width: 93px; /* Increased width for larger logo */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .navbar .nav-links {
@@ -271,13 +277,14 @@ header p {
 /* Call-to-Action Section */
 .cta-button {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 14px 28px;
   margin-top: 15px;
   background-color: var(--primary-color);
   /* Uses primary color */
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s;
@@ -314,14 +321,14 @@ header p {
   justify-content: center; /* Center-align cards within the container */
 }
 .card {
-  background-color: #1e1e1e;
-  color: #fff;
+  background: linear-gradient(145deg, #1d1d1d, #292929);
+  color: #fafafa;
   flex: 1; /* Allow the card to grow and fill the available space */
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .card-image {
@@ -348,11 +355,11 @@ header p {
 
 .card-content li,
 .card-content h2 {
-  padding-left: 30px;
+  padding-left: 25px;
 }
 
 .card-content h2 {
-  font-size: 1.6em;
+  font-size: 1.8em;
   margin: 10px 0;
   font-weight: bold; /* Bold for emphasis */
 }
@@ -390,17 +397,17 @@ header p {
 
 /* Footer Styles */
 footer {
-  background-color: #222;
+  background-color: #1a1a1a;
   color: #bbb;
   text-align: center;
-  padding: 10px 10px;
+  padding: 20px;
 }
 
 /* Footer Content Styles and social media */
 .stay-connected {
   text-align: center; /* Center the text */
   padding: 40px 20px 20px 20px; /* Add some padding */
-  color: #fff; /* Text color */
+  color: #e1e1e1;
 }
 
 .social-media {
@@ -430,7 +437,7 @@ footer p {
 }
 
 footer .footer-logo {
-  max-width: 50px;
+  max-width: 60px;
   height: auto;
   margin-right: 20px;
 }
@@ -546,12 +553,13 @@ ul li {
 @media (max-width: 768px) {
   .card-container {
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
   }
 
   .card {
     min-width: 100%;
     max-width: 100%;
+    margin-bottom: 20px;
   }
 
   header {
@@ -559,7 +567,7 @@ ul li {
   }
 
   .header-text h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
   .header-text h1 span {
     font-size: 24px;
@@ -571,7 +579,7 @@ ul li {
   }
 
   header p {
-    font-size: 24px;
+    font-size: 1.6rem;
   }
 
   .contact-link {
